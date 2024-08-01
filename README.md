@@ -2,10 +2,11 @@
 
 This project contains all the necessary code and instructions to replicate the results presented in our study.
 
-<div align="center">
+
 ## About the Study
+
 This study explores the influence of parliamentary debates on fiscal policy in Germany, using a novel dataset of speeches from the Bundestag.
-</div>
+
 
 ### Objective:
 
