@@ -27,4 +27,8 @@ Key Findings:
 - Fiscal sentiment has significant macroeconomic effects.
 - Parliamentary debates provide insights into government spending shocks.
 
+## Replication Data ##
+
+The underlying dataset on which all analyses are based can be downloaded here.
+
 
