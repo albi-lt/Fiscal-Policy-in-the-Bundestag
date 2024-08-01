@@ -2,8 +2,10 @@
 
 This project contains all the necessary code and instructions to replicate the results presented in our study.
 
+<div align="center">
 ## About the Study
 This study explores the influence of parliamentary debates on fiscal policy in Germany, using a novel dataset of speeches from the Bundestag.
+</div>
 
 ### Objective:
 
@@ -23,9 +25,9 @@ Analyzes how changes in fiscal sentiment affect government spending and other ma
 
 ### Key Findings:
 
-- 📈 ** Changes in fiscal sentiment influence government spending.**
-- 📈 ** Fiscal sentiment has significant macroeconomic effects.**
-- 📈 ** Parliamentary debates provide insights into government spending shocks.**
+- 📈 **Changes in fiscal sentiment influence government spending.**
+- 📈 **Fiscal sentiment has significant macroeconomic effects.**
+- 📈 **Parliamentary debates provide insights into government spending shocks.**
 
 ## Replication Data
 
