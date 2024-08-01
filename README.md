@@ -23,9 +23,9 @@ Analyzes how changes in fiscal sentiment affect government spending and other ma
 
 ### Key Findings:
 
-**- Changes in fiscal sentiment influence government spending.**
-**- Fiscal sentiment has significant macroeconomic effects.**
-**- Parliamentary debates provide insights into government spending shocks.**
+- 📈 ** Changes in fiscal sentiment influence government spending.**
+- 📈 ** Fiscal sentiment has significant macroeconomic effects.**
+- 📈 ** Parliamentary debates provide insights into government spending shocks.**
 
 ## Replication Data
 
