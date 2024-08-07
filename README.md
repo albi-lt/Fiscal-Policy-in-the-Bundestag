@@ -32,7 +32,7 @@ Analyzes how changes in fiscal sentiment affect government spending and other ma
 
 ## Replication Data
 
-The underlying dataset on which all analyses are based can be downloaded here.
+The underlying dataset on which all analyses are based can be downloaded [here](https://jlubox.uni-giessen.de/getlink/fiHVNZ5aYoYM2ydxLsNxAzhm/).
 
 bundestag_speeches = pd.read_csv('data/all_bundestag_speeches_replication_data.csv', index_col = 'Unnamed: 0')
 
