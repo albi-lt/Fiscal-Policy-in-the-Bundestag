@@ -4,14 +4,13 @@ import pandas as pd
 import multiprocessing
 import time
 import numpy as np
-from doc2vec_functions import *
 from sklearn.metrics.pairwise import cosine_similarity
-
+from functions_doc2vec import *
 # Get the number of CPU cores for multiprocessing
 cores = multiprocessing.cpu_count()
 
 # Import data
-data = pd.read_pickle('data/data_preprocessed.pkl')
+data = pd.read_pickle('data\df_bundestag_speeches_1960_preprocessed.pkl')
 data.index = pd.PeriodIndex(data.date, freq='Q')
 
 # Create a list of periods and sub-periods for the analysis
