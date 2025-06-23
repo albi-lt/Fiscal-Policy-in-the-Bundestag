@@ -72,9 +72,10 @@ def remove_stopwords(texttoken, stopwordslist):
 
     Returns:
     --------
-    list of list of str: A list of tokenized documents with stopwords removed.
+    list of strings: A list of tokenized documents with stopwords removed.
     """
-    return [[word for word in simple_preprocess(str(doc)) if word not in stopwordslist] for doc in texttoken]
+    stops_removed = [[word for word in simple_preprocess(doc) if word not in stopwordslist] for doc in texttoken]
+    return [' '.join(doc) for doc in stops_removed]
 
 def lemmatize_texts(texts, spacy_model):
     '''
