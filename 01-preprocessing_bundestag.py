@@ -16,8 +16,7 @@ from functions_text_preprocessing import *
 
 # load data
 print("Load the data ...")
-data_all_lp = pd.read_csv("data/all_bundestag_speeches_replication_data.csv",
-                          index_col=0, parse_dates=['date'])
+data_all_lp = pd.read_csv("data/all_bundestag_speeches_replication_data.csv")
 
 # filter out certain speeches: keep only 'MdB','Bundeskanzler','Bundesminister',
 # 'Staatssekretär', 'Staatsminister'
@@ -38,7 +37,7 @@ print("Start text preprocessing ...")
 # use text column and add preprocessed text columns (with and without lemmatizing)
 
 # lemmatizing
-lemmatized = lemmatize_texts([data_all_lp.text[i] for i in range(data_all_lp.shape[0])], 'de_core_news_lg')
+lemmatized = lemmatize_texts(data_all_lp.text.values, 'de_core_news_lg')
 
 data_all_lp = data_all_lp.replace('-\n', '', regex=True)  # otherwise words get seperated
 
@@ -60,6 +59,12 @@ data_all_lp['text_preprocessed_lemmatized'] = remove_words(
     [' '.join(i) for i in data_all_lp.text_preprocessed_lemmatized],
     convert_umlauts_strings(stop_words))  # removes unlemmatized nltk stopwords
 
+# domain-specific stopwords
+# df_stopwords = pd.read_pickle('bundestags_stoppworter_preprocessed.pkl') #adjust path!
+# lemmatized = lemmatize_texts([df_stopwords.stoppworter[i] for i in range(df_stopwords.shape[0])], 'de_core_news_lg') #lemmatize stopwords
+
+# df_stopwords['lemmatized'] = lemmatized
+# df_stopwords.to_pickle('data\stopwords_german_bundestag.pkl') #This file is already provided in the repository.
 
 # limit the dataset to the period from 1960 onwards (because of the economic variables)
 data_all_lp['date'] = pd.to_datetime(data_all_lp['date'], format='%d.%m.%Y')
@@ -68,13 +73,12 @@ df_bundestag_speeches_1960 = data_all_lp.loc[data_all_lp['date'].dt.year >= 1960
 # remove domain-specific stopwords
 df_stopwords = pd.read_csv("data/stopwords_german_bundestag.csv")
 df_bundestag_speeches_1960['text_preprocessed'] = remove_stopwords(df_bundestag_speeches_1960.text_preprocessed,
-                                                                        list(df_stopwords.stopwords))
+                                                                        df_stopwords.stopwords.values)
 df_bundestag_speeches_1960['text_preprocessed_lemmatized'] = remove_stopwords(
-    df_bundestag_speeches_1960.text_preprocessed_lemmatized, list(df_stopwords.lemmatized))
+    df_bundestag_speeches_1960.text_preprocessed_lemmatized, df_stopwords.lemmatized.values)
 
-# counts document lengths after removing stopwords
 text_length_preprocessed = [len(i.split()) for i in
-                            df_bundestag_speeches_1960.text_preprocessed]
+                            df_bundestag_speeches_1960.text_preprocessed]  # counts document lengths after removing stopwords
 text_length_lemmatized = [len(i.split()) for i in df_bundestag_speeches_1960.text_preprocessed_lemmatized]
 
 df_bundestag_speeches_1960['text_length_preprocessed'] = text_length_preprocessed
