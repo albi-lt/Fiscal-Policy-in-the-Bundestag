@@ -1,6 +1,25 @@
 # Fiscal-Policy-in-the-Bundestag
 
-This project contains all the necessary code and instructions to replicate the results presented in our study.
+This project contains all the necessary code and instructions to replicate the results presented in our study:
+
+@article{LatifiNabokaKrellTillmannWinker2024,
+title = {Fiscal policy in the Bundestag: Textual analysis and macroeconomic effects},
+journal = {European Economic Review},
+volume = {168},
+pages = {104827},
+year = {2024},
+issn = {0014-2921},
+doi = {https://doi.org/10.1016/j.euroecorev.2024.104827},
+url = {https://www.sciencedirect.com/science/article/pii/S0014292124001569},
+author = {Albina Latifi and Viktoriia Naboka-Krell and Peter Tillmann and Peter Winker},
+keywords = {Text mining, Word embeddings, VAR models, Identification, Government spending},
+abstract = {Fiscal policy is made in parliaments. We go to the roots of changes of fiscal policy in Germany and use a novel data set on all parliamentary speeches in the Bundestag from 1960 to 2021. We propose an embedding-based approach, which allows the representation of words and documents in a shared vector space, in order to measure fiscal policy-related sentiment in parliamentary debates at a scale from contractionary to expansionary. We also distinguish between sentiment related to exogenous and endogenous fiscal policy. We put fiscal sentiment into a series of recursively-identified vector autoregressive models to show that a change in fiscal sentiment causes a shift in government spending and has significant effects on the macroeconomy. The results support the notion that the debate in parliament contains information for the identification of government spending shocks.}
+}
+
+**Latifi, Naboka-Krell, Tillmann, & Winker (2024)**  
+*Fiscal policy in the Bundestag: Textual analysis and macroeconomic effects*,  
+*European Economic Review*, **168**, 104827.  
+[📄 View Paper](https://www.sciencedirect.com/science/article/pii/S0014292124001569)
 
 
 ## About the Study
@@ -80,5 +99,27 @@ This script trains an LDA topic model to obtain endogenous/exogenous fiscal-poli
 
 ### Folder: `06-EER-replication_of_VAR_results`
 The folder reproduces all results from the VAR Analyis.
+
+## 📚 Citation
+
+If you use this code or paper in your own work, please cite:
+
+```bibtex
+@article{LatifiNabokaKrellTillmannWinker2024,
+  title   = {Fiscal policy in the Bundestag: Textual analysis and macroeconomic effects},
+  journal = {European Economic Review},
+  volume  = {168},
+  pages   = {104827},
+  year    = {2024},
+  issn    = {0014-2921},
+  doi     = {https://doi.org/10.1016/j.euroecorev.2024.104827},
+  url     = {https://www.sciencedirect.com/science/article/pii/S0014292124001569},
+  author  = {Albina Latifi and Viktoriia Naboka-Krell and Peter Tillmann and Peter Winker}
+}
+```
+
+## Subsequent Studies Building on These Sentiment Scores
+
+The sentiment scores produced in this study have also been used in the following papers:
 
 
